@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 29af051f5da3144aba0f854954392185
+guid: 9c4e10d02f0ec4afba47a3262a6580b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3891203490741647758
-    second: farmbgv1_0
+      213: 4709268643478081515
+    second: egg crack animation-Sheet_0
+  - first:
+      213: 5622882033194352171
+    second: egg crack animation-Sheet_1
+  - first:
+      213: -8284859381806882565
+    second: egg crack animation-Sheet_2
+  - first:
+      213: 2008850022201564626
+    second: egg crack animation-Sheet_3
+  - first:
+      213: -5742561043658651599
+    second: egg crack animation-Sheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -47,7 +59,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: farmbgv1_0
+      name: egg crack animation-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 640
-        height: 360
+        width: 17
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2768599aa0baff9c0800000000000000
-      internalID: -3891203490741647758
+      spriteID: bef856661eeaa5140800000000000000
+      internalID: 4709268643478081515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: egg crack animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eb97afa6d780e40800000000000000
+      internalID: 5622882033194352171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: egg crack animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0a65d8944460d80800000000000000
+      internalID: -8284859381806882565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: egg crack animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd1c5ca37ed0eb10800000000000000
+      internalID: 2008850022201564626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: egg crack animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138cabbf7235e40b0800000000000000
+      internalID: -5742561043658651599
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      farmbgv1_0: -3891203490741647758
+      egg crack animation-Sheet_0: 4709268643478081515
+      egg crack animation-Sheet_1: 5622882033194352171
+      egg crack animation-Sheet_2: -8284859381806882565
+      egg crack animation-Sheet_3: 2008850022201564626
+      egg crack animation-Sheet_4: -5742561043658651599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
