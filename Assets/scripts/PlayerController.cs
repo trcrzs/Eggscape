@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Vector2 moveInput;
     private Camera cam;
+    private Collider2D playerCol;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         cam = Camera.main;
+        playerCol = GetComponent<Collider2D>();
     }
 
     void FixedUpdate()
@@ -70,10 +72,17 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = (target - start).normalized;
 
         GameObject eggObject = Instantiate(eggPrefab, throwPoint.position, Quaternion.identity);
-        Egg egg = eggObject.GetComponent<Egg>();
 
+        Collider2D eggCol = eggObject.GetComponent<Collider2D>();
+        if (playerCol != null && eggCol != null)
+        {
+            Physics2D.IgnoreCollision(playerCol, eggCol);
+        }
+
+        Egg egg = eggObject.GetComponent<Egg>();
         if (egg != null)
         {
+            Debug.Log("Throw direction: " + direction);
             egg.SetDirection(direction, throwForce);
         }
     }
