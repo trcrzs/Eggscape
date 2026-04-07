@@ -4,6 +4,8 @@ public class EnemyFollow : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public float stopDistance = 0.2f;
+    public AudioClip enemyDeath;
+    AudioSource audioSource;
 
     private Transform player;
     private WaveManager waveManager;
@@ -11,6 +13,9 @@ public class EnemyFollow : MonoBehaviour
     void Start()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+
+        audioSource = GetComponent<AudioSource>();
 
         if (playerObject != null)
         {
@@ -41,13 +46,16 @@ public class EnemyFollow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PlayerAttack"))
+        if (other.CompareTag("Egg"))
         {
+
             if (waveManager != null)
             {
                 waveManager.EnemyDied();
             }
 
+
+            AudioSource.PlayClipAtPoint(enemyDeath, transform.position, 0.75f);
             Destroy(gameObject);
         }
 
