@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
 
         if (cam == null || Mouse.current == null) return;
 
-        Vector3 mouseWorld = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        mouseWorld.z = 0f;
+        Vector3 mouseWorld = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()); //gets input from mouse input from player
+        mouseWorld.z = 0f; //no need for z
 
         if (mouseWorld.x > transform.position.x)
         {
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-    public void OnThrow(InputValue button)
+    public void OnThrow(InputValue button) //takes the input from above and sets the animator and instantiates the egg and its physics in the direction of the input
     {
         if (!button.isPressed) return;
         if (eggPrefab == null || throwPoint == null || cam == null || Mouse.current == null) return;

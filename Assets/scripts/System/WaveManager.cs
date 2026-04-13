@@ -5,7 +5,7 @@ using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;
 
     public int totalEnemiesInWave = 10;
@@ -32,7 +32,7 @@ public class WaveManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        int enemiesToSpawn = totalEnemiesInWave - registeredEnemies;
+        int enemiesToSpawn = totalEnemiesInWave - registeredEnemies; //counts number of enemies to spawn as it spawns them
 
         for (int i = 0; i < enemiesToSpawn; i++)
         {
@@ -47,29 +47,34 @@ public class WaveManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (enemyPrefab == null) return;
-        if (spawnPoints.Length == 0) return;
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
+        if (spawnPoints == null || spawnPoints.Length == 0) return;
 
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-        Transform spawnPoint = spawnPoints[randomIndex];
+        int randomSpawnIndex = Random.Range(0, spawnPoints.Length); //picks random spawn point from array of spawn points
+        Transform spawnPoint = spawnPoints[randomSpawnIndex];
 
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length); //picks random enemy to spawn from array of enemies
+        GameObject enemyToSpawn = enemyPrefabs[randomEnemyIndex];
+
+        if (enemyToSpawn == null) return;
+
+        Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity); //uses above to spawn enemy in randomized place
     }
 
-    public void RegisterEnemy()
+    public void RegisterEnemy() //count number of enemies so we don't go over the wave count, use to update UI
     {
         registeredEnemies++;
         UpdateUI();
     }
 
-    public void EnemyDied()
+    public void EnemyDied() //counts dead enemies, used to update UI
     {
         enemiesDefeated++;
         UpdateUI();
         CheckRoundClear();
     }
 
-    void UpdateUI()
+    void UpdateUI() //shows enemies remaining in UI for player
     {
         if (enemiesText != null)
         {
@@ -78,26 +83,26 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void CheckRoundClear()
-{
-    if (roundEnded) return;
-
-    if (finishedSpawning && enemiesDefeated >= totalEnemiesInWave)
+    void CheckRoundClear() //checks if all enemies have been defeated before starting end round sequence
     {
-        roundEnded = true;
+        if (roundEnded) return;
 
-        if (enemiesText != null)
+        if (finishedSpawning && enemiesDefeated >= totalEnemiesInWave)
         {
-            enemiesText.text = "Round Clear";
+            roundEnded = true;
+
+            if (enemiesText != null)
+            {
+                enemiesText.text = "Round Clear";
+            }
+
+            Debug.Log("Round Clear");
+
+            StartCoroutine(EndRoundSequence());
         }
-
-        Debug.Log("Round Clear");
-
-        StartCoroutine(EndRoundSequence());
     }
-}
 
-    IEnumerator EndRoundSequence()
+    IEnumerator EndRoundSequence() //kills level music and plays win sound then delays and loads the next game scene
     {
         AudioSource[] audioSources = Camera.main.GetComponents<AudioSource>();
 
@@ -113,15 +118,7 @@ public class WaveManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        int currentIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentIndex + 1);
-    }
-
-    IEnumerator LoadNextWave()
-    {
-        yield return new WaitForSeconds(3f);
-
-        int currentIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
     }
 }

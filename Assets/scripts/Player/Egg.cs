@@ -36,7 +36,7 @@ public class Egg : MonoBehaviour
 
         if (rb != null)
         {
-            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime); //egg's projectile motion
         }
     }
 
@@ -46,7 +46,7 @@ public class Egg : MonoBehaviour
         moveSpeed = speed;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other) //crack egg runs on enemy or out of bounds collider hit
     {
         if (hasCracked) return;
 
@@ -81,6 +81,6 @@ public class Egg : MonoBehaviour
             splatSound.PlayOneShot(crack);
         }
 
-        Destroy(gameObject, destroyDelay);
+        Destroy(gameObject, destroyDelay);//destroyDelay so that animator can run the egg cracking animation
     }
 }

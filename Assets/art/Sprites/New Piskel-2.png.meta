@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0b988cc80c0cd49f4b2a1d47acb13ee0
+guid: b23c662cdb3fa48a299539119f29ea16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1206817015800663843
-    second: chef walk-Sheet_0
-  - first:
-      213: -220972503461933146
-    second: chef walk-Sheet_1
+      213: -6212091817297008591
+    second: New Piskel-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chef walk-Sheet_0
+      name: New Piskel-2_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 4
-        width: 48
-        height: 59
+        x: 20
+        y: 27
+        width: 34
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32f02bf8ea97fb010800000000000000
-      internalID: 1206817015800663843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chef walk-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 4
-        width: 48
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6afc50acda2feecf0800000000000000
-      internalID: -220972503461933146
+      spriteID: 138a6edb7673ac9a0800000000000000
+      internalID: -6212091817297008591
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chef walk-Sheet_0: 1206817015800663843
-      chef walk-Sheet_1: -220972503461933146
+      New Piskel-2_0: -6212091817297008591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
